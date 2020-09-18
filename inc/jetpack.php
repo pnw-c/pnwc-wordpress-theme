@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package comintern
+ * @package PNWC
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function comintern_jetpack_setup() {
+function pnwc_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'comintern_infinite_scroll_render',
+			'render'    => 'pnwc_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function comintern_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'comintern-style',
+				'stylesheet' => 'pnwc-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,12 +48,12 @@ function comintern_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'comintern_jetpack_setup' );
+add_action( 'after_setup_theme', 'pnwc_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function comintern_infinite_scroll_render() {
+function pnwc_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

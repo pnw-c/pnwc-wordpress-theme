@@ -1,4 +1,4 @@
-=== comintern ===
+=== PNWC ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called comintern.
+A starter theme called PNWC.
 
 == Description ==
 
-red theme
+PNWC Wordpress Theme
 
 == Installation ==
 
@@ -26,7 +26,7 @@ red theme
 
 = Does this theme support any plugins? =
 
-comintern includes support for WooCommerce and for Infinite Scroll in Jetpack.
+PNWC includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

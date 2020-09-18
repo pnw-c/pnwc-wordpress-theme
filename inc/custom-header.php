@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package comintern
+ * @package PNWC
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses comintern_header_style()
+ * @uses pnwc_header_style()
  */
-function comintern_custom_header_setup() {
+function pnwc_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'comintern_custom_header_args',
+			'pnwc_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'comintern_header_style',
+				'wp-head-callback'   => 'pnwc_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'comintern_custom_header_setup' );
+add_action( 'after_setup_theme', 'pnwc_custom_header_setup' );
 
-if ( ! function_exists( 'comintern_header_style' ) ) :
+if ( ! function_exists( 'pnwc_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see comintern_custom_header_setup().
+	 * @see pnwc_custom_header_setup().
 	 */
-	function comintern_header_style() {
+	function pnwc_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
