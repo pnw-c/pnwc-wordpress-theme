@@ -1,5 +1,10 @@
 a {
 	color: $color__link;
+	text-decoration: none;
+	transition: all 200ms ease-in-out;
+	transition-property: color, text-decoration-color;
+	text-decoration-color: #e5321e00;
+	-webkit-tap-highlight-color: $color__link-tap;
 
 	&:visited {
 		color: $color__link-visited;
@@ -9,6 +14,8 @@ a {
 	&:focus,
 	&:active {
 		color: $color__link-hover;
+		text-decoration: underline;
+		text-decoration-color: #e5321e55;
 	}
 
 	&:focus {
@@ -19,4 +26,5 @@ a {
 	&:active {
 		outline: 0;
 	}
+
 }

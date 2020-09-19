@@ -1,2 +1,6 @@
-$size__site-main: 100%;
+$size__site-main: 850px;
+$size__site-padding: calc(50vw - #{$size__site-main / 2});
 $size__site-sidebar: 25%;
+$size__site-mobile-breakpoint: 640px;
+$size__site-mobile-header: 60px;
+$size__site-header: 85px;

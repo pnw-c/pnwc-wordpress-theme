@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,19 +48,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -73,7 +69,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -99,7 +94,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -121,7 +115,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -187,7 +180,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -197,7 +189,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -343,7 +334,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -360,7 +350,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -377,7 +366,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -393,7 +381,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -403,9 +390,9 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.6em;
 }
 
 h1,
@@ -473,6 +460,7 @@ big {
 --------------------------------------------- */
 body {
 	background: #fff;
+	overflow-x: hidden;
 }
 
 hr {
@@ -533,25 +521,29 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #4169e1;
+	color: #e5321e;
+	text-decoration: none;
+	transition: all 200ms ease-in-out;
+	transition-property: color, text-decoration-color;
+	text-decoration-color: #e5321e00;
+	-webkit-tap-highlight-color: #e5321e44;
 }
 
 a:visited {
-	color: #800080;
+	color: #e5321e;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #191970;
+a:hover, a:focus, a:active {
+	color: #ee6e5f;
+	text-decoration: underline;
+	text-decoration-color: #e5321e55;
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -577,8 +569,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active,
-button:focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -640,16 +631,65 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
+.site-header {
+	border-bottom: 1px solid #e8e8e8;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	display: flex;
+	width: 100%;
+	height: 85px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 calc(50vw - 425px);
+	transition: top 100ms ease-in-out;
+}
+
+.site-main {
+	margin-top: 85px;
+}
+
+.site-header-up {
+	top: -85px;
+}
+
+.custom-logo {
+	height: 70px;
+	width: auto;
+}
+
+.site-branding {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.site-title {
+	margin: 0 0 0 10px;
+}
+
+.site-title > a {
+	text-decoration: none;
+	font-size: 1.3em;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+
+.site-description {
+	margin: -5px 0 0 10px;
+	font-size: 0.82em;
+	color: #e5321e;
+}
+
 .main-navigation {
 	display: block;
-	width: 100%;
+	margin-right: 15px;
+	/* desktop menu items */
 }
 
 .main-navigation ul {
@@ -690,11 +730,21 @@ textarea {
 
 .main-navigation li {
 	position: relative;
+	padding-left: 15px;
 }
 
 .main-navigation a {
 	display: block;
-	text-decoration: none;
+}
+
+/* Large screen */
+@media screen and (min-width: 1280px) {
+	.site-branding {
+		margin-left: -80px;
+	}
+	.main-navigation {
+		margin-right: 0;
+	}
 }
 
 /* Small menu. */
@@ -703,21 +753,37 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (max-width: 640px) {
+	.site-header-up {
+		top: -60px;
+	}
+	.site-header {
+		position: fixed;
+		height: 60px;
+	}
+	.site-main {
+		margin-top: 60px;
+	}
+	.site-info {
+		display: none;
+	}
+	.custom-logo {
+		height: 50px;
+		width: auto;
+	}
+}
 
+@media screen and (min-width: 640px) {
 	.menu-toggle {
 		display: none;
 	}
-
 	.main-navigation ul {
 		display: flex;
 	}
 }
 
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -752,6 +818,25 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.site-main p, .site-main li {
+	font-family: "EB Garamond", serif;
+	font-size: 1.5em;
+	line-height: 1.6em;
+}
+
+.wp-block-quote {
+	margin: 0;
+	padding: 5px 30px;
+	font-style: italic;
+}
+
+.type-post,
+.type-page {
+	width: 100vw;
+	overflow-x: hidden;
+	padding: 5px calc(50vw - 425px) 0 calc(50vw - 425px);
+}
+
 .updated:not(.published) {
 	display: none;
 }
@@ -759,12 +844,30 @@ textarea {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
+}
+
+.fblog .entry-content {
+	height: 300px;
+	overflow: hidden;
+}
+
+.entry-title {
+	margin-bottom: 10px;
+}
+
+.entry-meta, .entry-footer {
+	color: #777;
+	font-size: 0.82em;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.edit-link {
+	margin-left: 5px;
 }
 
 /* Comments
@@ -877,10 +980,8 @@ textarea {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -892,13 +993,40 @@ textarea {
 	display: block;
 }
 
+.display-posts-listing {
+	list-style: none;
+	margin: 15px 0;
+	padding: 0;
+}
+
+.display-posts-listing .title {
+	font-size: 1.5em;
+	font-weight: 600;
+	display: block;
+	margin: 20px 0 0px 0;
+}
+
+.display-posts-listing .author, .display-posts-listing .date, .display-posts-listing .category-display {
+	font-size: 0.82em;
+}
+
+.display-posts-listing .excerpt-dash {
+	display: none;
+}
+
+.display-posts-listing .excerpt {
+	margin-top: 10px;
+	display: block;
+	font-family: "EB Garamond", serif;
+	font-size: 1.5em;
+	line-height: 1.6em;
+}
+
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -941,20 +1069,16 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -967,3 +1091,5 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/*# sourceMappingURL=style.css.map */

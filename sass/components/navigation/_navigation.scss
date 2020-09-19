@@ -1,7 +1,60 @@
+$site-branding-left: calc(95px + #{$size__site-padding});
+
+.site-header {
+	border-bottom: 1px solid #e8e8e8;
+	background-color: $color__background-body;
+	position: absolute;
+	top: 0;
+	display: flex;
+	width: 100%;
+	height: $size__site-header;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 $size__site-padding;
+	transition: top 100ms ease-in-out;
+}
+
+.site-main {
+	margin-top: $size__site-header;
+}
+
+.site-header-up {
+	top: - $size__site-header;
+}
+
+.custom-logo {
+	height: 70px;
+	width: auto;
+}
+
+.site-branding {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.site-title {
+	margin: 0 0 0 10px;
+}
+
+.site-title > a {
+	text-decoration: none;
+	font-size: $font__size-title;
+	font-weight: 700;
+	letter-spacing: $font__compact;
+}
+
+.site-description {
+	margin: -5px 0 0 10px;
+	font-size: $font__size-small;
+	color: $color__link;
+}
+
 .main-navigation {
 	display: block;
-	width: 100%;
-
+	
+		margin-right: 15px;
 	ul {
 		display: none;
 		list-style: none;
@@ -48,9 +101,11 @@
 			left: auto;
 		}
 	}
-
+	
+	/* desktop menu items */
 	li {
 		position: relative;
+		padding-left: 15px;
 
 		&:hover > a,
 		&.focus > a {
@@ -59,7 +114,6 @@
 
 	a {
 		display: block;
-		text-decoration: none;
 	}
 
 	.current_page_item > a,
@@ -69,13 +123,50 @@
 	}
 }
 
+/* Large screen */
+
+@media screen and (min-width: 1280px) {
+	.site-branding {
+		margin-left: -80px;
+	}
+
+	.main-navigation {
+		margin-right: 0;
+	}
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (max-width: $size__site-mobile-breakpoint) {
+
+	.site-header-up {
+		top: - $size__site-mobile-header;
+	}
+
+	.site-header {
+		position: fixed;
+		height: $size__site-mobile-header;
+	}
+
+	.site-main {
+		margin-top: $size__site-mobile-header;
+	}
+
+	.site-info {
+		display: none;
+	}
+
+	.custom-logo {
+		height: 50px;
+		width: auto;
+	}
+}
+
+@media screen and (min-width: $size__site-mobile-breakpoint) {
 
 	.menu-toggle {
 		display: none;

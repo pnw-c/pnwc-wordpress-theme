@@ -7,6 +7,25 @@
 	margin: 0 0 1.5em;
 }
 
+.site-main p, .site-main li {
+	font-family: $font__body;
+	font-size: $font__size-body;
+	line-height: $font__line-height-body;
+}
+
+.wp-block-quote {
+	margin: 0;
+	padding: 5px 30px;
+	font-style: italic;
+}
+
+.type-post,
+.type-page {
+	width: 100vw;
+	overflow-x: hidden;
+	padding: 5px $size__site-padding 0 $size__site-padding;
+}
+
 .updated:not(.published) {
 	display: none;
 }
@@ -14,10 +33,27 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
+}
+.fblog .entry-content {
+	height: 300px;
+	overflow: hidden;
+}
+
+.entry-title {
+	margin-bottom: 10px;
+}
+
+.entry-meta, .entry-footer {
+	color: $color__text-light;
+	font-size: $font__size-small;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.edit-link {
+	margin-left: 5px;
 }

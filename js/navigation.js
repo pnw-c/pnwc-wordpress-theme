@@ -6,6 +6,41 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const masthead = document.getElementById( 'masthead' );
+
+	let scrolled;
+	let lastScrollTop = 0;
+	const appbarHeight = masthead.clientHeight;
+	const mobileAppbarHeight = 60;
+
+	// Hide mobile appbar on scroll down, show on scroll up
+	function handleScroll() {
+		const scrollTop = document.scrollingElement.scrollTop;
+
+		if ( lastScrollTop === scrollTop ) {
+			return;
+		}
+		if ( scrollTop > lastScrollTop && scrollTop > appbarHeight ) {
+			masthead.classList.add( 'site-header-up' );
+		} else {
+			masthead.classList.remove( 'site-header-up' );
+		}
+		
+		lastScrollTop = scrollTop;
+	}
+
+	// Only add scroll-linked events on mobile
+	if ( appbarHeight === mobileAppbarHeight ) {
+		window.addEventListener( 'scroll', function() {
+			scrolled = true;
+		} );
+		setInterval( function() {
+			if ( scrolled ) {
+				handleScroll();
+				scrolled = false;
+			}
+		}, 100 );
+	}
 
 	// Return early if the navigation don't exist.
 	if ( ! siteNavigation ) {
