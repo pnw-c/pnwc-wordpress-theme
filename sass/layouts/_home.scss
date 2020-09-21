@@ -1,0 +1,24 @@
+.home .entry-title {
+	display: none;
+}
+
+.home h1 {
+	font-size: 2.5em;
+}
+
+.home {
+	background: $color__page-background-body;
+	color: $color__page-text;
+}
+
+.home .wp-block-column {
+	h5 {
+		margin: 0;
+	}
+	p {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: $size__site-mobile-breakpoint) {
+}
