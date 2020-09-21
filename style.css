@@ -1001,7 +1001,8 @@ h1 {
 }
 
 .type-post,
-.type-page {
+.type-page,
+.post-navigation {
 	width: 100vw;
 	overflow-x: hidden;
 	padding: 5px calc(50vw - 425px) 0 calc(50vw - 425px);
@@ -1052,7 +1053,8 @@ h1 {
 
 @media screen and (max-width: 640px) {
 	.type-post,
-	.type-page {
+	.type-page,
+	.post-navigation {
 		padding-left: 10px;
 		padding-right: 10px;
 	}

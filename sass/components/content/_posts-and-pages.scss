@@ -23,7 +23,8 @@ h1 {
 }
 
 .type-post,
-.type-page {
+.type-page,
+.post-navigation {
 	width: 100vw;
 	overflow-x: hidden;
 	padding: 5px $size__site-padding 0 $size__site-padding;
@@ -73,7 +74,8 @@ h1 {
 
 @media screen and (max-width: $size__site-mobile-breakpoint) {
 	.type-post,
-	.type-page {
+	.type-page,
+	.post-navigation {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
