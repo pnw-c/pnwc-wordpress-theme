@@ -1,3 +1,23 @@
+.widget-area {
+	display: none;
+}
+
+.home .widget-area {
+	display: block;
+}
+
+.home .entry-title {
+	display: none;
+}
+
+.home h1 {
+	font-size: 2.5em;
+}
+
+h1 {
+	line-height: 1.5em;
+}
+
 .sticky {
 	display: block;
 }
@@ -26,6 +46,11 @@
 	padding: 5px $size__site-padding 0 $size__site-padding;
 }
 
+.home {
+	background: $color__page-background-body;
+	color: $color__page-text;
+}
+
 .updated:not(.published) {
 	display: none;
 }
@@ -35,6 +60,7 @@
 .entry-summary {
 	margin: 0;
 }
+
 .fblog .entry-content {
 	height: 300px;
 	overflow: hidden;
@@ -56,4 +82,21 @@
 
 .edit-link {
 	margin-left: 5px;
+}
+
+.wp-block-image.is-resized {
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-block-image {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: $size__site-mobile-breakpoint) {
+	.type-post,
+	.type-page {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }

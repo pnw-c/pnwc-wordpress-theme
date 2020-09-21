@@ -2,7 +2,7 @@ a {
 	color: $color__link;
 	text-decoration: none;
 	transition: all 200ms ease-in-out;
-	transition-property: color, text-decoration-color;
+	transition-property: color, text-decoration-color, background-color;
 	text-decoration-color: #e5321e00;
 	-webkit-tap-highlight-color: $color__link-tap;
 
@@ -13,9 +13,10 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color__link;
 		text-decoration: underline;
 		text-decoration-color: #e5321e55;
+		background-color: $color__page-link;
 	}
 
 	&:focus {
@@ -27,4 +28,25 @@ a {
 		outline: 0;
 	}
 
+}
+
+.home a {
+	color: $color__page-link;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: $color__page-link;
+		color: $color__page-link-hover;
+	}
+}
+
+.home .site-header a {
+	color: $color__page-text;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__page-link-hover;
+	}
 }

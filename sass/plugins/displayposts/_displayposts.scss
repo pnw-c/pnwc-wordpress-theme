@@ -6,13 +6,16 @@
 	padding: 0;
 
 	.title {
-		font-size: 1.5em;
+		font-family: $font__main;
+		font-size: 1.5rem;
 		font-weight: 600;
 		display: block;
-		margin: 20px 0 0px 0;
+		margin: 20px 0 -15px 0;
 	}
 
 	.author, .date, .category-display {
+		color: $color__text-light;
+		font-family: $font__main;
 		font-size: $font__size-small;
 	}
 
@@ -21,11 +24,8 @@
 	}
 
 	.excerpt {
-		margin-top: 10px;
 		display: block;
 		font-family: "EB Garamond", serif;
-		font-size: 1.5em;
-		line-height: 1.6em;
 	}
 }
 

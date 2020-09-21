@@ -7,12 +7,10 @@
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 	const masthead = document.getElementById( 'masthead' );
-
-	let scrolled;
+	let scrolled = false;
 	let lastScrollTop = 0;
 	const appbarHeight = masthead.clientHeight;
-	const mobileAppbarHeight = 60;
-
+	
 	// Hide mobile appbar on scroll down, show on scroll up
 	function handleScroll() {
 		const scrollTop = document.scrollingElement.scrollTop;
@@ -20,7 +18,11 @@
 		if ( lastScrollTop === scrollTop ) {
 			return;
 		}
-		if ( scrollTop > lastScrollTop && scrollTop > appbarHeight ) {
+		if (
+			scrollTop > lastScrollTop &&
+			scrollTop > appbarHeight &&
+			!siteNavigation.classList.contains( 'toggled' )
+		) {
 			masthead.classList.add( 'site-header-up' );
 		} else {
 			masthead.classList.remove( 'site-header-up' );
@@ -29,8 +31,14 @@
 		lastScrollTop = scrollTop;
 	}
 
-	// Only add scroll-linked events on mobile
-	if ( appbarHeight === mobileAppbarHeight ) {
+	// Only add scroll event if needed
+	if ( Math.max(
+		document.body.scrollWidth,
+		document.documentElement.scrollWidth,
+		document.body.offsetWidth,
+		document.documentElement.offsetWidth,
+		document.documentElement.clientWidth,
+	) <= 640 ) {
 		window.addEventListener( 'scroll', function() {
 			scrolled = true;
 		} );

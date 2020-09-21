@@ -26,7 +26,10 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'pnwc' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<div id="branding" class="site-branding">
+			<div class="branding-home">
+				<img class="branding-home-image" src="<?php echo get_header_image(); ?>"/>
+			</div>
 			<?php
 			the_custom_logo();
 			?>
